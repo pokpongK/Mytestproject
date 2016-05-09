@@ -44,3 +44,8 @@ gem 'devise'
 # Simple javascript toast notifications, plugged into the rails asset pipeline.
 gem 'toastr-rails' 
 
+gem 'omniauth'
+gem 'omniauth-facebook'
+
+gem "figaro"
+

@@ -14,3 +14,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore the secrets.yml file for storing keys
+config/secrets.yml
+
+# Ignore application configuration
+/config/application.yml
