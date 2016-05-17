@@ -1,3 +1,72 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "toastr"
+@import "toastr";
+  
+body {
+  background-color: #f8f8f8; 
+  color: #565A5C;
+}
+
+.container {
+  width: 80%;
+}
+
+.avatar-full{
+  width:100%;
+}
+
+.avatar-small{
+  width:28px;
+}
+
+.btn-primary.btn:hover {
+  color:#000000;
+  background-color:#28c9b5;
+  transition: 0.5s
+}
+
+.navbar-default{
+  background-color:#28c9b5;
+}
+
+.navbar-brand {
+  font-size:3em;
+  font-family:"Impact";
+}
+
+.form-group{
+  margin-bottom: 25px;
+}
+
+.form-control{
+  border-radius:2px;
+  hight: 4rem;  
+}
+
+.sidebar-list{
+  list-style: none;
+  padding-left: 0 ;
+}
+
+.sidebar-item{
+  padding: 10px 0px;
+  font-size: 16px;
+  border-bottom: 1px solid #ccc;
+  color: #82888a;
+}
+
+.sidebar-link{
+  color: #82888a;
+  text-decoration: none;
+}
+
+.sidebar-link:hover, .sidebar-link:focus {
+  text-decoration: none;
+  color:#cacccd;
+}
+
+.active.sidebar-link{
+  text-decoration: none;
+  font-weight: bold;
+  color: #565a5c;
+}
