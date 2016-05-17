@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   root 'pages#home'
   
 #set path name to plainand no "/user"  and config th edit to become ""profile, and controller of omniauth_callback
-  devise_for :users, path: "", path_name: {sign_in: 'login', sign_out: 'logout',edit: "profile"}, controllers: {omniauth_callbacks:"omniauth_callbacks"}
+  devise_for :users, path: "", path_names: {sign_in: 'login', sign_out:  'logout',edit: "profile"}, 
+              controllers: {omniauth_callbacks: "omniauth_callbacks", registrations: "registrations" }
+  
+  resources :users, only: [:show]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
