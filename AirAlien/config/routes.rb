@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   root 'pages#home'
   
 #set path name to plainand no "/user"  and config th edit to become ""profile, and controller of omniauth_callback
@@ -6,6 +7,8 @@ Rails.application.routes.draw do
               controllers: {omniauth_callbacks: "omniauth_callbacks", registrations: "registrations" }
   
   resources :users, only: [:show]
+  resources :rooms
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
