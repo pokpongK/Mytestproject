@@ -18,3 +18,6 @@ test:
 
 production:
   secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
+  
+  
+install imaage  processor for paperclip gem (see requirement in paperclip gem)
