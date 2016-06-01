@@ -6,9 +6,15 @@ class RoomsController < ApplicationController
   end
 
   def show #use set_room
+    @photos=@room.photos #show photo of rooms
   end
 
   def edit #use set_room
+    if current_user.id == @room.user.id #add logic to prevent other from edit your room
+    @photos=@room.photos
+    else
+      redirect_to root_paht ,notice: "You are not authorize to access this information"
+    end
   end
 
   def new
@@ -18,7 +24,13 @@ class RoomsController < ApplicationController
   def create
     @room= current_user.rooms.build(room_params)
     if @room.save
-      redirect_to notice:"Saved.."
+      if params[:image]
+        params[:image].each.do |image|
+         @room.photos.create[image: image]
+        end
+      end
+      @photos=@room.photos
+      redirect_to edit_rooms_path(@room) notice:"Saved.."
     else
       render :new
     end
@@ -26,7 +38,12 @@ class RoomsController < ApplicationController
   
   def update #use set_room
     if @room.update(room_params)
-      redirect_to notice:"Update.."
+      if params[:image]
+        params[:image].each.do |image|
+         @room.photos.create[image: image]
+        end
+      end
+      redirect_to notice:"Updated.."
     else
       render :new
     end
